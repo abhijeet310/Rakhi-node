@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakhi Matka Service</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="designer-heading">Rakhi Matka Service</h1>
+    </header>
+    <main class="main-content">
+        <section class="intro">
+            <div class="note-container">
+                <div class="note">Welcome to Rakhi Matka Service</div>
+            </div>            
+        </section>  
+        <section class="intro">
+            <h3 class="designer-subheading">Rakhi Matka Result</h3>
+            <p class="description">Rakhi Matka Service is the No. 1 Matka Sites that welcomes you full-heartedly. Here, you can find the perfect guess by the top guesser along with the Fast Matka Result too. Aaj Ka Satta Kalyan Fix Single Jodi free update here; you can find the top Matka Market of India, including Kalyan, Main, Milan, Rajdhani, along with Kalyan Matka Tips, Fast Matka Result, Kalyan Main Rajdhani Matka Chart, and Matka Guessing by DPBOSS By App. Best Matka Site By DPBOSS.</p>
+        </section> 
+        <section class="lucky-number-container">
+            <h2 class="heading">Today's Lucky Number</h2>
+            <div class="number-placeholder">
+                {{luckyNumber}}
+            </div>
+        </section>   
+        <section class="lucky-number-container">
+            <h2 class="heading">Live Update</h2>
+        </section>
+        <!-- Rakhi Morning Section -->
+        <div class="section-container" style="max-height: 100px;">
+            <h3 class="section-heading">Rakhi Morning</h3>
+            <div class="number-box">
+                <p>{{morningNumber}}</p>
+            </div>
+        </div>
+
+        <!-- Line between sections -->
+        <div class="section-line"></div>
+        <!-- Rakhi Day Section -->
+        <div class="section-container">
+            <h3 class="section-heading">Rakhi Day</h3>
+            <div class="number-box">
+                <p>{{nightNumber}}</p>
+            </div>
+        </div>
+
+
+        <section class="lucky-number-container">
+            <h2 class="heading">World Me Sbse Tej Result</h2>
+        </section>
+
+        <!-- <div class="section-container">
+            <div class="button-container">
+                <button class="small-button left-button">Jodi</button>
+                <h3 class="section-heading">Rakhi Morning</h3>
+                <button class="small-button right-button">Panel</button>
+            </div>
+            <div class="number-box">
+                <p>{{morningNumber}}</p>
+            </div>
+        </div> -->
+
+        <div class="section-container">
+            <div class="button-container">
+                <button class="small-button left-button" onclick="fetchJodiData('morning')">Jodi</button>
+                <h3 class="section-heading">Rakhi Morning</h3>
+                <button class="small-button right-button" onclick="fetchPanelData('morning')">Panel</button>
+            </div>
+            <div class="number-box">
+                <p>{{morningNumber}}</p>
+            </div>
+            <div id="jodi-chart-morning" class="chart-container" style="display:none;"></div>
+            <div id="panel-chart-morning" class="chart-container" style="display:none;"></div>
+        </div>
+        
+        <div class="section-line"></div>
+        
+        <div class="section-container">
+            <div class="button-container">
+                <button class="small-button left-button" onclick="fetchJodiData('night')">Jodi</button>
+                <h3 class="section-heading">Rakhi Day</h3>
+                <button class="small-button right-button" onclick="fetchPanelData('night')">Panel</button>
+            </div>
+            <div class="number-box">
+                <p>{{nightNumber}}</p>
+            </div>
+            <div id="jodi-chart-night" class="chart-container" style="display:none;"></div>
+            <div id="panel-chart-night" class="chart-container" style="display:none;"></div>
+        </div>
+        
+
+    </main>
+    <footer class="footer">
+        <p>&copy; 2023 Rakhi Matka Service. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function fetchJodiData(time) {
+            fetch('/jodi')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById(`jodi-chart-${time}`).innerText = data.data;
+                    document.getElementById(`jodi-chart-${time}`).style.display = 'block';
+                    document.getElementById(`panel-chart-${time}`).style.display = 'none';
+                })
+                .catch(error => console.error('Error fetching Jodi data:', error));
+        }
+    
+        function fetchPanelData(time) {
+            fetch('/panel')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById(`panel-chart-${time}`).innerText = data.data;
+                    document.getElementById(`panel-chart-${time}`).style.display = 'block';
+                    document.getElementById(`jodi-chart-${time}`).style.display = 'none';
+                })
+                .catch(error => console.error('Error fetching Panel data:', error));
+        }
+    </script>
+</body>
+</html>
