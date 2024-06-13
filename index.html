@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rakhi Matka Service</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles.css">
+    
     <style>
         /* Add your custom styles for responsiveness here */
         @media only screen and (max-width: 600px) {
@@ -44,7 +46,7 @@
         </section>  
         <section class="intro">
             <h3 class="designer-subheading">Rakhi Matka Result</h3>
-            <p class="description">Rakhi Matka Service is the No. 1 Matka Sites that welcomes you full-heartedly. Here, you can find the perfect guess by the top guesser along with the Fast Matka Result too. Aaj Ka Satta Kalyan Fix Single Jodi free update here; you can find the top Matka Market of India, including Kalyan, Main, Milan, Rajdhani, along with Kalyan Matka Tips, Fast Matka Result, Kalyan Main Rajdhani Matka Chart, and Matka Guessing by DPBOSS By App. Best Matka Site By DPBOSS.</p>
+            <p class="description">Rakhi Matka Service is the No. 1 Matka Sites that welcomes you full-heartedly. Here, you can find the perfect guess by the top guesser along with the Fast Matka Result too. Aaj Ka Satta Kalyan Fix Single Jodi free update here; you can find the top Matka Market of India, including Kalyan, Main, Milan, Rajdhani, along with Kalyan Matka Tips, Fast Matka Result, Kalyan Main Rajdhani.</p>
         </section> 
         <section class="lucky-number-container">
             <h2 class="heading">Today's Lucky Number</h2>
@@ -55,8 +57,8 @@
         <section class="lucky-number-container">
             <h2 class="heading">Live Update</h2>
         </section>
-        <!-- Rakhi Morning Section -->
-
+        
+        <!-- Designer box for Rakhi Morning Section -->
         <div class="designer-box">
             <h3 class="section-heading">Rakhi Morning</h3>
             <div class="number-box">
@@ -65,27 +67,23 @@
         </div>
         <!-- Line between sections -->
         <div class="section-line"></div>
-        <!-- Rakhi Day Section -->
+        <!-- Designer box for Rakhi Day Section -->
         <div class="designer-box">
             <h3 class="section-heading">Rakhi Day</h3>
             <div class="number-box">
                 <p style="color: whitesmoke;">{{nightNumber}}</p>
             </div>
         </div>
-
-
         <section class="lucky-number-container">
             <h2 class="heading">World Me Sbse Tej Result</h2>
         </section>
-
- <!-- Button container outside the designer box -->
- <div class="button-container">
-    <button class="small-button left-button" onclick="fetchJodiData('morning')">Jodi</button>
-    <button class="small-button right-button" onclick="fetchPanelData('morning')">Panel</button>
-</div>
-
-<!-- Designer box for Rakhi Morning Section -->
-<div class="designer-box">
+        <!-- Button container outside the designer box for morning -->
+        <div class="button-container">
+            <button class="small-button left-button" onclick="fetchJodiData('morning')">Jodi (Morning)</button>
+            <button class="small-button right-button" onclick="fetchPanelData('morning')">Panel (Morning)</button>
+        </div>
+        <!-- Designer box for Rakhi Morning Section -->
+    <div class="designer-box">
     <h3 class="section-heading">Rakhi Morning</h3>
     <div class="number-box">
         <p style="color: whitesmoke;">{{morningNumber}}</p>
@@ -94,14 +92,12 @@
     <div id="panel-chart-morning" class="chart-container" style="display:none;"></div>
 </div>
 
-        
         <div class="section-line"></div>
  
         <div class="button-container">
-            <button class="small-button left-button" onclick="fetchJodiData('morning')">Jodi</button>
-            <button class="small-button right-button" onclick="fetchPanelData('morning')">Panel</button>
+            <button class="small-button left-button" onclick="fetchJodiData('morning')">Jodi (Day)</button>
+            <button class="small-button right-button" onclick="fetchPanelData('morning')">Panel (Day)</button>
         </div>
-        
         <!-- Designer box for Rakhi Morning Section -->
         <div class="designer-box">
             <h3 class="section-heading">Rakhi Day</h3>
@@ -112,20 +108,102 @@
             <div id="panel-chart-morning" class="chart-container" style="display:none;"></div>
         </div>
         
+       
+        <!-- Jodi Morning Modal -->
+        <div class="modal fade" id="jodiModalMorning" tabindex="-1" role="dialog" aria-labelledby="jodiModalMorningLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="jodiModalMorningLabel">Jodi Data (Morning)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="jodi-chart-modal-morning">
+                        <!-- Jodi data for morning will be loaded here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel Morning Modal -->
+        <div class="modal fade" id="panelModalMorning" tabindex="-1" role="dialog" aria-labelledby="panelModalMorningLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="panelModalMorningLabel">Panel Data (Morning)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="panel-chart-modal-morning">
+                        <!-- Panel data for morning will be loaded here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jodi Day Modal -->
+        <div class="modal fade" id="jodiModalDay" tabindex="-1" role="dialog" aria-labelledby="jodiModalDayLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="jodiModalDayLabel">Jodi Data (Day)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="jodi-chart-modal-day">
+                        <!-- Jodi data for day will be loaded here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel Day Modal -->
+        <div class="modal fade" id="panelModalDay" tabindex="-1" role="dialog" aria-labelledby="panelModalDayLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="panelModalDayLabel">Panel Data (Day)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="panel-chart-modal-day">
+                        <!-- Panel data for day will be loaded here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
     <footer class="footer">
         <p>&copy; 2023 Rakhi Matka Service. All rights reserved.</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
         function fetchJodiData(time) {
             fetch('/jodi')
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById(`jodi-chart-${time}`).innerText = data.data;
-                    document.getElementById(`jodi-chart-${time}`).style.display = 'block';
-                    document.getElementById(`panel-chart-${time}`).style.display = 'none';
+                    document.getElementById(`jodi-chart-modal-${time}`).innerText = data.data;
+                    $('#jodiModal' + time.charAt(0).toUpperCase() + time.slice(1)).modal('show');
                 })
                 .catch(error => console.error('Error fetching Jodi data:', error));
         }
@@ -134,9 +212,8 @@
             fetch('/panel')
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById(`panel-chart-${time}`).innerText = data.data;
-                    document.getElementById(`panel-chart-${time}`).style.display = 'block';
-                    document.getElementById(`jodi-chart-${time}`).style.display = 'none';
+                    document.getElementById(`panel-chart-modal-${time}`).innerText = data.data;
+                    $('#panelModal' + time.charAt(0).toUpperCase() + time.slice(1)).modal('show');
                 })
                 .catch(error => console.error('Error fetching Panel data:', error));
         }
