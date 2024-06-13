@@ -56,20 +56,20 @@
             <h2 class="heading">Live Update</h2>
         </section>
         <!-- Rakhi Morning Section -->
-        <div class="section-container" style="max-height: 100px;">
+
+        <div class="designer-box">
             <h3 class="section-heading">Rakhi Morning</h3>
             <div class="number-box">
-                <p>{{morningNumber}}</p>
+                <p style="color: whitesmoke;">{{morningNumber}}</p>
             </div>
         </div>
-
         <!-- Line between sections -->
         <div class="section-line"></div>
         <!-- Rakhi Day Section -->
-        <div class="section-container">
+        <div class="designer-box">
             <h3 class="section-heading">Rakhi Day</h3>
             <div class="number-box">
-                <p>{{nightNumber}}</p>
+                <p style="color: whitesmoke;">{{nightNumber}}</p>
             </div>
         </div>
 
@@ -78,43 +78,38 @@
             <h2 class="heading">World Me Sbse Tej Result</h2>
         </section>
 
-        <!-- <div class="section-container">
-            <div class="button-container">
-                <button class="small-button left-button">Jodi</button>
-                <h3 class="section-heading">Rakhi Morning</h3>
-                <button class="small-button right-button">Panel</button>
-            </div>
-            <div class="number-box">
-                <p>{{morningNumber}}</p>
-            </div>
-        </div> -->
+ <!-- Button container outside the designer box -->
+ <div class="button-container">
+    <button class="small-button left-button" onclick="fetchJodiData('morning')">Jodi</button>
+    <button class="small-button right-button" onclick="fetchPanelData('morning')">Panel</button>
+</div>
 
-        <div class="section-container">
-            <div class="button-container">
-                <button class="small-button left-button" onclick="fetchJodiData('morning')">Jodi</button>
-                <h3 class="section-heading">Rakhi Morning</h3>
-                <button class="small-button right-button" onclick="fetchPanelData('morning')">Panel</button>
-            </div>
+<!-- Designer box for Rakhi Morning Section -->
+<div class="designer-box">
+    <h3 class="section-heading">Rakhi Morning</h3>
+    <div class="number-box">
+        <p style="color: whitesmoke;">{{morningNumber}}</p>
+    </div>
+    <div id="jodi-chart-morning" class="chart-container" style="display:none;"></div>
+    <div id="panel-chart-morning" class="chart-container" style="display:none;"></div>
+</div>
+
+        
+        <div class="section-line"></div>
+ 
+        <div class="button-container">
+            <button class="small-button left-button" onclick="fetchJodiData('morning')">Jodi</button>
+            <button class="small-button right-button" onclick="fetchPanelData('morning')">Panel</button>
+        </div>
+        
+        <!-- Designer box for Rakhi Morning Section -->
+        <div class="designer-box">
+            <h3 class="section-heading">Rakhi Day</h3>
             <div class="number-box">
-                <p>{{morningNumber}}</p>
+                <p style="color: whitesmoke;">{{nightNumber}}</p>
             </div>
             <div id="jodi-chart-morning" class="chart-container" style="display:none;"></div>
             <div id="panel-chart-morning" class="chart-container" style="display:none;"></div>
-        </div>
-        
-        <div class="section-line"></div>
-        
-        <div class="section-container">
-            <div class="button-container">
-                <button class="small-button left-button" onclick="fetchJodiData('night')">Jodi</button>
-                <h3 class="section-heading">Rakhi Day</h3>
-                <button class="small-button right-button" onclick="fetchPanelData('night')">Panel</button>
-            </div>
-            <div class="number-box">
-                <p>{{nightNumber}}</p>
-            </div>
-            <div id="jodi-chart-night" class="chart-container" style="display:none;"></div>
-            <div id="panel-chart-night" class="chart-container" style="display:none;"></div>
         </div>
         
 

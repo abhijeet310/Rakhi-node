@@ -274,6 +274,25 @@ p {
 .right-button {
     margin-left: 10px; /* Adjust spacing between buttons */
 }
+.designer-box {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    margin:  20px auto;
+    background-color: #718de9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 20%;
+}
+
+.designer-box .section-heading {
+    margin-top: 0;
+}
+
+.designer-box .number-box {
+    margin-top: 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
 
 .footer {
     text-align: center;
