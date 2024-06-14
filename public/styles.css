@@ -304,6 +304,19 @@ p {
     text-align: center;
 }
 
+.modal-fullscreen {
+    width: 126%;
+    max-width: none;
+    height: 130%;
+    margin: 0;
+}
+
+.modal-fullscreen .modal-content {
+    height: 100%;
+    border: none;
+    border-radius: 0;
+}
+
 .footer {
     text-align: center;
     padding: 20px;
