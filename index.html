@@ -148,8 +148,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Jodi Day Modal -->
         <div class="modal fade" id="jodiModalDay" tabindex="-1" role="dialog" aria-labelledby="jodiModalDayLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -180,7 +178,6 @@
                         </button>
                     </div>
                     <div class="modal-body" id="panel-chart-modal-day">
-                        <!-- Panel data for day will be loaded here -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -198,21 +195,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
+       
         function fetchJodiData(time) {
-            fetch('/jodi')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById(`jodi-chart-modal-${time}`).innerText = data.data;
-                    $('#jodiModal' + time.charAt(0).toUpperCase() + time.slice(1)).modal('show');
-                })
-                .catch(error => console.error('Error fetching Jodi data:', error));
-        }
+    fetch('/jodi')
+        .then(response => response.text()) // Change response type to text
+        .then(data => {
+            document.getElementById(`jodi-chart-modal-${time}`).innerHTML = data; // Use innerHTML to render HTML
+            $('#jodiModal' + time.charAt(0).toUpperCase() + time.slice(1)).modal('show');
+        })
+        .catch(error => console.error('Error fetching Jodi data:', error));
+}
+
     
         function fetchPanelData(time) {
             fetch('/panel')
-                .then(response => response.json())
+                .then(response => response.text())
                 .then(data => {
-                    document.getElementById(`panel-chart-modal-${time}`).innerText = data.data;
+                    document.getElementById(`panel-chart-modal-${time}`).innerHTML = data;
                     $('#panelModal' + time.charAt(0).toUpperCase() + time.slice(1)).modal('show');
                 })
                 .catch(error => console.error('Error fetching Panel data:', error));

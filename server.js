@@ -46,18 +46,256 @@ app.get('/', (req, res) => {
     });
 });
 
-// Route for Jodi button
+
+
 app.get('/jodi', (req, res) => {
-    // Replace this with actual data fetching logic
-    const jodiData = "Jodi Chart Data"; // Placeholder data
-    res.json({ data: jodiData });
+    const jodiData = `
+        <style>
+            .modal-content {
+                max-width: 80%;
+                max-height: 80%;
+                overflow: auto;
+            }
+            .table-container {
+                width: 100%;
+                max-height: calc(80vh - 40px); /* Adjusted for header row height */
+                overflow: auto;
+            }
+
+            /* Apply styles to the table */
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                padding: 8px;
+                text-align: center;
+            }
+            th {
+                background-color: #4CAF50; /* Green */
+                color: white;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2; /* Light gray */
+            }
+            tr:hover {
+                background-color: #ddd; /* Darker gray */
+            }
+        </style>
+        <h4>RAKHI MORNING MATKA JODI 2019-2024</h4>
+        <div class="table-container">
+            <table border="1" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>84</td>
+                        <td>12</td>
+                        <td>30</td>
+                        <td>44</td>
+                        <td>35</td>
+                        <td>64</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>50</td>
+                        <td>63</td>
+                        <td>38</td>
+                        <td>47</td>
+                        <td>99</td>
+                        <td>65</td>
+                    </tr>
+                    <tr>
+                        <td>84</td>
+                        <td>12</td>
+                        <td>30</td>
+                        <td>44</td>
+                        <td>35</td>
+                        <td>64</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>50</td>
+                        <td>63</td>
+                        <td>38</td>
+                        <td>47</td>
+                        <td>99</td>
+                        <td>65</td>
+                    </tr>
+                    <tr>
+                        <td>84</td>
+                        <td>12</td>
+                        <td>30</td>
+                        <td>44</td>
+                        <td>35</td>
+                        <td>64</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>50</td>
+                        <td>63</td>
+                        <td>38</td>
+                        <td>47</td>
+                        <td>99</td>
+                        <td>65</td>
+                    </tr>
+                    <tr>
+                        <td>84</td>
+                        <td>12</td>
+                        <td>30</td>
+                        <td>44</td>
+                        <td>35</td>
+                        <td>64</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>50</td>
+                        <td>63</td>
+                        <td>38</td>
+                        <td>47</td>
+                        <td>99</td>
+                        <td>65</td>
+                    </tr>
+                    <tr>
+                        <td>84</td>
+                        <td>12</td>
+                        <td>30</td>
+                        <td>44</td>
+                        <td>35</td>
+                        <td>64</td>
+                        <td>95</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>50</td>
+                        <td>63</td>
+                        <td>38</td>
+                        <td>47</td>
+                        <td>99</td>
+                        <td>65</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    `;
+    res.send(jodiData);
 });
 
 // Route for Panel button
 app.get('/panel', (req, res) => {
     // Replace this with actual data fetching logic
-    const panelData = "Panel Chart Data"; // Placeholder data
-    res.json({ data: panelData });
+const panelData = `
+<style>
+    /* Apply styles to the modal content and table container */
+    .modal-content {
+        max-width: 80%;
+        max-height: 80%;
+        overflow: auto;
+    }
+    .table-container {
+        width: 100%;
+        max-height: calc(80vh - 40px); /* Adjusted for header row height */
+        overflow: auto;
+    }
+    /* Apply styles to the table */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2; /* Light gray */
+    }
+    tr:hover {
+        background-color: #ddd; /* Darker gray */
+    }
+</style>
+<h4>RAKHI MORNING MATKA PANNEL 2019-2024</h4>
+<div class="table-container">
+    <table border="1" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+            <tr>
+            <td>84</td>
+            <td>12</td>
+            <td>30</td>
+            <td>44</td>
+            <td>35</td>
+            <td>64</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>50</td>
+            <td>63</td>
+            <td>38</td>
+            <td>47</td>
+            <td>99</td>
+            <td>65</td>
+        </tr>
+        <tr>
+            <td>84</td>
+            <td>12</td>
+            <td>30</td>
+            <td>44</td>
+            <td>35</td>
+            <td>64</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>50</td>
+            <td>63</td>
+            <td>38</td>
+            <td>47</td>
+            <td>99</td>
+            <td>65</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>84</td>
+                <td>12</td>
+                <td>30</td>
+                <td>44</td>
+                <td>35</td>
+                <td>64</td>
+                <td>95</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
+`;
+
+    res.send(panelData );
 });
 
 // Handle 404 errors
